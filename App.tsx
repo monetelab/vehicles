@@ -1,20 +1,14 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { TokenProvider } from "./src/Presentation/context/TokenContext";
+import { Navigator } from "./src/Presentation/navigator/Navigator";
+
+const TokenState = ({ children }: any) => {
+  return <TokenProvider>{children}</TokenProvider>;
+};
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <TokenState>
+      <Navigator />
+    </TokenState>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
