@@ -34,7 +34,6 @@ export const VehicleDetails = ({ navigation, route }: Props) => {
   function outSession() {
     closeUserSession();
   }
-  console.log("IdSelection", IdSelection);
 
   return (
     <SafeAreaView
