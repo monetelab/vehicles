@@ -15,8 +15,6 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export function Navigator() {
   const { Token } = useContext(TokenContext);
-  console.log(Token);
-
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Login">

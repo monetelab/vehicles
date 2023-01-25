@@ -24,7 +24,6 @@ export const VehicleDetailsViewModel = ({ IdSelection }) => {
   React.useEffect(() => {
     getVehicle(IdSelection);
   }, []);
-  console.log("cerdscedcseds", IdSelection);
 
   return {
     vehicleDinamic,
