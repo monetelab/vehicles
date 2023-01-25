@@ -11,19 +11,20 @@ const vehicle = {
   vin: "GCLNHW7XF5DA30360",
 };
 
-export const VehicleDetailsViewModel = () => {
+export const VehicleDetailsViewModel = ({ IdSelection }) => {
   const [vehicleDinamic, setVehicleDinamic] = React.useState(vehicle);
   const { removeTokenSession } = useContext(TokenContext);
   const closeUserSession = async () => {
     removeTokenSession("token");
   };
 
-  const getVehicle = async () => {
-    setVehicleDinamic(await getVehicleByIdUseCase(route.params?.id));
+  const getVehicle = async (IdSelection) => {
+    setVehicleDinamic(await getVehicleByIdUseCase(IdSelection));
   };
   React.useEffect(() => {
-    getVehicle();
+    getVehicle(IdSelection);
   }, []);
+  console.log("cerdscedcseds", IdSelection);
 
   return {
     vehicleDinamic,

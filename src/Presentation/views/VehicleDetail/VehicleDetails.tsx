@@ -25,12 +25,16 @@ const vehicle = {
 interface Props
   extends StackScreenProps<RootStackParamList, "VehicleDetails"> {}
 export const VehicleDetails = ({ navigation, route }: Props) => {
+  const IdSelection = route.params?.id;
   const { height, width } = useWindowDimensions();
-  const { vehicleDinamic, closeUserSession } = VehicleDetailsViewModel();
+  const { vehicleDinamic, closeUserSession } = VehicleDetailsViewModel({
+    IdSelection,
+  });
 
   function outSession() {
     closeUserSession();
   }
+  console.log("IdSelection", IdSelection);
 
   return (
     <SafeAreaView
