@@ -1,7 +1,9 @@
 import React from "react";
 import { View, Image, TextInput, StyleSheet, KeyboardType } from "react-native";
+import { MyColors } from "../theme/AppTheme";
 
 interface Props {
+  externalStyle: any;
   image: any;
   placeholder: string;
   value: string;
@@ -13,6 +15,7 @@ interface Props {
 }
 
 export const MyTextInput = ({
+  externalStyle,
   image,
   placeholder,
   value,
@@ -30,7 +33,10 @@ export const MyTextInput = ({
         placeholder={placeholder}
         keyboardType={keyboardType}
         value={value}
-        onChangeText={(text) => onChangeText(property, text)}
+        autoCapitalize={"none"}
+        placeholderTextColor={"#fabada"}
+        autoCorrect={false}
+        onChangeText={onChangeText}
         secureTextEntry={secureTextEntry}
         editable={editable}
       />
@@ -43,15 +49,18 @@ const styles = StyleSheet.create({
     width: 25,
     height: 25,
     marginTop: 5,
+    tintColor: MyColors.primary,
   },
   formInput: {
     flexDirection: "row",
-    marginTop: 30,
+    marginVertical: 20,
+    width: "100%",
   },
   formTextInput: {
-    flex: 1,
+    width: "90%",
     borderBottomWidth: 1,
-    borderBottomColor: "#AAAAAA",
-    marginLeft: 15,
+    borderBottomColor: MyColors.primary,
+    color: "white",
+    paddingHorizontal: 10,
   },
 });

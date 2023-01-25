@@ -8,7 +8,7 @@ interface Props {
   onPress: () => void;
 }
 
-export const MyButton = ({ text, onPress, disabled }: Props) => {
+export const MyButtonOutSession = ({ text, onPress, disabled }: Props) => {
   return (
     <TouchableOpacity
       disabled={disabled}
@@ -25,12 +25,18 @@ export const MyButton = ({ text, onPress, disabled }: Props) => {
 
 const styles = StyleSheet.create({
   roundedButton: {
-    width: "100%",
+    width: 50,
     height: 50,
-    backgroundColor: MyColors.primary,
+    bottom: 50,
+    backgroundColor: "black",
+    borderColor: MyColors.secondary,
+    borderWidth: 4,
     alignItems: "center",
     justifyContent: "center",
     borderRadius: 15,
+    position: "absolute",
+    right: 10,
+    top: 10,
   },
   textButton: {
     color: "white",
